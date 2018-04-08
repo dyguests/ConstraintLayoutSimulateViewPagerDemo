@@ -38,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0"/>
+            app:layout_constraintGuide_percent="-1"/>
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/cl_l"
@@ -65,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="1"/>
+            app:layout_constraintGuide_percent="0"/>
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/cl_r"
@@ -92,7 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="2"/>
+            app:layout_constraintGuide_percent="1"/>
     </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

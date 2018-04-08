@@ -13,24 +13,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-//        cl_container.viewTreeObserver
-//        cl_container.measure(makeMeasureSpec(cl_container.width), makeMeasureSpec(cl_container.height))
-//        cl_l.layoutParams = cl_l.layoutParams.apply {
-//            width = cl_container.width
-//        }
-//        cl_r.layoutParams = cl_r.layoutParams.apply {
-//            width = cl_container.width
-//        }
-
         var guidePercent = 0f
         btn_1.setOnClickListener {
             guidePercent = if (guidePercent == 0f) 1f else 0f
 
             TransitionManager.beginDelayedTransition(cl_container)
-            val layoutParams = guideline.layoutParams as ConstraintLayout.LayoutParams
+            val layoutParams = gl_m.layoutParams as ConstraintLayout.LayoutParams
             layoutParams.guidePercent = guidePercent
-            guideline.layoutParams = layoutParams
+            gl_m.layoutParams = layoutParams
         }
     }
 
