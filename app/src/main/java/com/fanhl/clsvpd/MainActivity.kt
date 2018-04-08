@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.partial_main_bottom.*
 class MainActivity : AppCompatActivity() {
     private val constraint1 by lazy {
         ConstraintSet().apply {
-            clone(cl_container as ConstraintLayout)
+            clone(this@MainActivity, R.layout.partial_main_bottom)
         }
     }
     private val constraint2 by lazy {
@@ -26,9 +26,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var guidePercent = 1f
         btn_1.setOnClickListener {
-            guidePercent = if (guidePercent == 0f) 1f else 0f
+            if (false) return@setOnClickListener
+
+            status = !status
+            //val            guidePercent = if (status) 1f else 0f
+            val guidePercent = if (status) 0f else 1f
 
             TransitionManager.beginDelayedTransition(cl_container as ConstraintLayout)
             gl_l.apply {
@@ -48,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-//        btn_1.setOnClickListener { changeStatus() }
+        btn_1.setOnClickListener { changeStatus() }
     }
 
     private fun changeStatus() {
